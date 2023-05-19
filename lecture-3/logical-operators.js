@@ -4,11 +4,6 @@ console.log(true || false); // true
 console.log(false || true); // true
 console.log(false || false);// false
 
-console.log(true && true);  // true
-console.log(true && false); // false
-console.log(false && true); // false
-console.log(false && false);// false
-
 // OR operator returns first truthy value
 console.log(1 || 0);    // 1, since 1 is truthy value
 let a = 10;
@@ -40,3 +35,24 @@ let h = 0;
 console.log(h ?? 10);   // 0
 console.log('null ?? 10', null ?? 10);
 console.log('undefined ?? 10', undefined ?? 10);
+
+
+// AND operator
+console.log(true && true);  // true
+console.log(true && false); // false
+console.log(false && true); // false
+console.log(false && false);// false
+
+// AND operator returns first falsy value
+console.log('1 && 0  ---> ', 1 && 0);    // 0, first falsy value will be returned
+console.log('1 && 3  ---> ', 1 && 3);    // 3, all are truthy, then last value will be returned
+console.log('null && 5  ---> ', null && 5); // null, since null is falsy
+console.log('1 && 3 && null && 6  ---> ', 1 && 3 && null && 6);   // null
+
+
+// (NOT) !
+console.log('!true --> ', !true); // false
+console.log('!false --> ', !false); // true
+console.log('!0 --> ', !0); // true
+console.log("!'' --> ", !''); // true
+console.log("!!null --> ", !!null); // false
