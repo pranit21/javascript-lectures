@@ -46,12 +46,12 @@ console.log('Area of circle -> ', area(4, 0));
 function fun1() {
     return 1;
 }
-console.log(fun1());
+console.log(fun1());    // 1
 
 function fun2() {
     return;
 }
-console.log(fun2());
+console.log(fun2());    // undefined
 
 function fun3() {
     return (
@@ -59,4 +59,4 @@ function fun3() {
         + "hello"
     );
 }
-console.log(fun3());
+console.log(fun3());    // 70hello
