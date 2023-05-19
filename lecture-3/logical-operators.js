@@ -35,7 +35,7 @@ console.log(username); */
 let height = 0;
 console.log(height || 10);
 
-// null coalescens (??) - will only return next value if the previous value is null/undefined
+// null coalescing (??) - will only return next value if the previous value is null/undefined
 let h = 0;
 console.log(h ?? 10);   // 0
 console.log('null ?? 10', null ?? 10);
