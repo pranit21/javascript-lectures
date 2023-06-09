@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <button onclick="sayHi()">Click Me!</button>
+    <button id="elem">Say hi</button>
+    <button id="elem1" onclick="sayHi()">Say hi</button>
+
+    <!-- Event bubbling -->
+    <div onclick="alert('hiiiii')">
+        ahsdsahdlksj
+        <strong onclick="alert('strong')">Hello</strong>
+    </div>
+
+    <div id="div1">
+        hiasdsa
+        <strong id="div2">hijsadsa</strong>
+    </div>
+
+    <a href="https://google.com" onclick="callEvent(event)">Google</a>
+
+    <script src="events.js"></script>
+    
+    <button id="btn2">After script</button>
+</body>
+</html>
