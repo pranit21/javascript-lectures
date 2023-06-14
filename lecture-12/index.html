@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Programming</title>
+</head>
+<body>
+    <!-- <script src="./main1.js"></script> -->
+    <!-- <script>
+        function loadScript(url) {
+            // console.log(1);
+            const script = document.createElement('script');
+            script.src = url;
+            document.head.append(script);   // script is loaded asynchronously
+        }
+
+        loadScript('./main1.js');
+
+        console.log(2);
+    </script> -->
+
+    <!-- <script>
+        function loadScript(url, cb) {
+            // console.log(1);
+            const script = document.createElement('script');
+            script.src = url;
+
+            script.onload = () => cb(null, script); // here, we are calling cb function after script is loaded
+            script.onerror = () => cb(new Error('Error while loading a script.'));
+
+            document.head.append(script);   // script is loaded asynchronously
+        }
+
+        // error-first callback function
+        // In error-first callback function, first parameter is always an error object
+        // if there is an error in asynchronous operation, then first parameter will be error object
+        // otherwise, first parameter will be null
+        loadScript('./main3.js', (error, script) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(script.src + ' is loaded');
+                sayHi();
+            }
+        });
+
+        // sayHi();     // error, because main2.js is not loaded yet
+    </script> -->
+
+
+    <script>
+        function loadScript(url, cb) {
+            const script = document.createElement('script');
+            script.src = url;
+
+            script.onload = () => cb(null, script);
+            script.onerror = () => cb(new Error('Error while loading a script.'));
+
+            document.head.append(script);   // script is loaded asynchronously
+        }
+
+        // pyramid of doom / callback hell
+        loadScript('./main2.js', (error, script) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(script.src + ' is loaded');
+                sayHi();
+
+                loadScript('./main1.js', (error, script) => {
+                    if (error) {
+                        // ...
+                    } else {
+                        // ...
+                        loadScript('./main3.js', (error, script) => {
+                            if (error) {
+                                // ...
+                            } else {
+                                // ...
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
