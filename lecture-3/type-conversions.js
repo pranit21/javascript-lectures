@@ -46,5 +46,6 @@ console.log(null, Boolean(null)); // false
 console.log(undefined, Boolean(undefined)); // false
 console.log(NaN, Boolean(NaN)); // false
 console.log(" ", Boolean(" ")); // true, because space is non-empty value
+console.log("0", Boolean("0")); // true, because string "0" is non-empty value
 
 // Rule: Any intuitively empty value, like 0, empty string (''), null, undefined, NaN will become false
