@@ -2,10 +2,10 @@
 //     console.log('After 2 seconds');
 // }, 0);
 
-// /* function fun1() {
-//     console.log('fun1');
-// }
-// fun1(); */
+/* function fun1() {
+    console.log('fun1');
+}
+fun1(); */
 
 // console.log('Done!');
 
